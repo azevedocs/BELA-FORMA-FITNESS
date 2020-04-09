@@ -3,7 +3,7 @@
     font-size: 100%;
     box-sizing: border-box;
     padding: 0;
-    font-family: glacial, indifference, sans-serif;;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .p-estrutura{
@@ -20,6 +20,7 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    animation: fade 1s ease-in-out;
 }
 
 .t-login{
@@ -32,25 +33,24 @@
     padding: 30px 10px;
     align-items: center;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.39);;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .mensagem{
    display: flex;
    justify-content: center;
-   background-color: #32CD32;
    border-radius: 5px 5px 0px 0px;
 }
 
 .mensagem p{
-    color: #ffff;
+    color: black;
     font-weight: bold;
     font-size: 26.8px;
 }
 
 .gerente button{
     box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0.39);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     font-size: 25px;
     padding: 27px 55px;
     border: none;
@@ -59,6 +59,7 @@
     font-weight: bold;
     border-radius: 8px;
     outline: none;
+    cursor: pointer;
 }
 
 .gerente button:active{
@@ -80,8 +81,12 @@
     font-weight: bold;
     border-radius: 8px;
     outline: none;
+    cursor: pointer;
 }
 
+.meio{
+    margin: 35px 0px 50px 0px;
+}
 .meio p{
     background-color: black;
     width: 100%;
@@ -90,4 +95,123 @@
     border-radius: 50%;
     font-weight: bold;
     padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*animação*/
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/*ESTILO DO LOGIN GERENTE*/
+
+.login-gerente{
+    animation: fade 1s ease-in-out;
+}
+.h1g{
+    font-size: 20px;
+    color: #0000CD;
+}
+label{
+    margin-top: 35px;
+    margin-right: 180px;
+    font-weight: bold;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nomeg, #senhag{
+    width: 230px;
+    height: 75px;
+    font-size: 30PX;
+    border-radius: 8px;
+    outline: none;
+    padding: 3px;
+    border:solid #0000CD 3px;
+}
+
+.entrar-g{
+    margin-top: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color:#0000CD ;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.39);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.entrar-g:active{
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39), inset 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
+
+.entrar-g:hover{
+    opacity: 0.7;
+}
+
+/*ESTILO DO LOGIN FUNCIONARIO*/
+
+.h1f{
+    font-size: 20px;
+    color: #DC143C;
+}
+
+
+#nomef, #senhaf{
+    width: 230px;
+    height: 75px;
+    font-size: 30PX;
+    border-radius: 8px;
+    outline: none;
+    padding: 3px;
+    border:solid #DC143C 3px;
+}
+
+.entrar-f{
+    margin-top: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color:#DC143C ;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.39);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.entrar-f:active{
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39), inset 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
+
+.entrar-f:hover{
+    opacity: 0.7;
+}
+
+.pegar{
+    display: none;
+}
+
+.ativo{
+    display: block;
+}
+
+.r-img{
+    width: 20px;
+    height: 20px;
 }

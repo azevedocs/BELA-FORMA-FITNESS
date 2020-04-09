@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bela Forma Fitness</title>
+    <title>Bela Forma Fitness Login</title>
     <link rel="stylesheet" href="login-principal.css">
 </head>
 <body>
@@ -11,19 +11,44 @@
     <section class="p-estrutura">
         <div class="login">
             <div class="mensagem">
-                <p class="mensagem1">ESCOLHA O LOGIN</p>
+                <p class="mensagem1">FAÇA O LOGIN</p>
             </div>
             <div class="t-login">
+                <div class="segura-1 principal">
                     <div class="gerente">
-                        <button>GERENTE</button>
+                        <button class="b">GERENTE</button>
                     </div>
                     <div class="meio">
                         <p>OU</p>
                     </div>
                     <div class="funcionario">
-                        <button>FUNCIONARIO</button>
+                        <button class="b">FUNCIONARIO</button>
                     </div>   
+                </div>
+                <div class="login-gerente pegar">
+                    <a href="index.html"><img class="r-img" src="./img/returnn.png" alt=""></a>
+                <form action="">
+                    <h1 class="h1g">GERENTE</h1>
+                    <label for="nomeg">Login</label>
+                    <input type="text" name="nome" id="nomeg" autocomplete="off" required>
+                    <label for="senhag">Senha</label>
+                    <input type="password" name="senha" id="senhag" autocomplete="off" required>
+                    <button class="entrar-g">Entrar</button>
+                </form>
             </div>
+                <div class="login-funcionario pegar">
+                        <a href="index.html"><img class="r-img" src="./img/returnn.png" alt=""></a>
+                    <form action="">
+                        <h1 class="h1f">FUNCIONARIO</h1>
+                        <label for="nomef">Login</label>
+                        <input type="text" name="nome" id="nomef" autocomplete="off" required maxlength="50">
+                        <label for="senhaf">Senha</label>
+                        <input type="password" name="senha" id="senhaf" autocomplete="off" required maxlength="50">
+                        <button class="entrar-f">Entrar</button>
+                    </form>
+                </div>
+            </div>
+            
         </div>
     </section>
 </body>
