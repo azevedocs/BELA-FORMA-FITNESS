@@ -18,12 +18,12 @@
                     <div class="gerente">
                         <button class="b">GERENTE</button>
                     </div>
-                    <div class="meio">
-                        <p>OU</p>
-                    </div>
                     <div class="funcionario">
+                        <button class="b">FUNCIONARIO</button>
+                    </div>
+                    <div class="professor">
                         <button class="b">PROFESSOR</button>
-                    </div>   
+                    </div>
                 </div>
                 <!--Dados do login do gerente pegar com php para fazer a verificação-->
                 <div class="login-gerente pegar">
@@ -41,7 +41,7 @@
                 <div class="login-funcionario pegar">
                         <a href="index.html"><img class="r-img" src="./img/returnn.png" alt=""></a>
                     <form action="" method="post">
-                        <h1 class="h1f">PROFESSOR</h1>
+                        <h1 class="h1f">FUNCIONARIO</h1>
                         <label for="nomef">Login</label>
                         <input type="text" name="nome2" id="nomef" autocomplete="off" required maxlength="50">
                         <label for="senhaf">Senha</label>
@@ -49,11 +49,26 @@
                         <input type="submit" class="entrar-f" name="submit2" value="Entrar">
                     </form>
                 </div>
+            <!-----Dados do login de professor pegar com php para fazer a verificação-->
+                <div class="login-professor pegar">
+                        <a href="index.html"><img class="r-img" src="./img/returnn.png" alt=""></a>
+                    <form action="" method="post">
+                        <h1 class="h1p">PROFESSOR</h1>
+                        <label for="nomep">Login</label>
+                        <input type="text" name="nome3" id="nomep" autocomplete="off" required maxlength="50">
+                        <label for="senhap">Senha</label>
+                        <input type="password" name="senha3" id="senhap" autocomplete="off" required maxlength="50">
+                        <input type="submit" class="entrar-p" name="submit3" value="Entrar">
+                    </form>
+                </div>
             </div>
             
         </div>
     </section>
+
     <?php
+    /*primeiro login*/
+
 				/* Declaração de Variáveis */
 				$userg = @$_REQUEST['nome1'];
 				$passg = @$_REQUEST['senha1'];
@@ -95,10 +110,10 @@
                 $submitf = @$_REQUEST['submit2'];
                 
                 $user3 = 'felipe';
-				$pass3 = '12345';
+				$pass3 = '123';
 				
 				$user4 = 'gabriel';
-                $pass4 = '12345';
+                $pass4 = '123';
                 
                 if($submitf){
 
@@ -111,6 +126,36 @@
 							$_SESSION['usuario']=$userf;
 							$_SESSION['senha']=$passf;
 							header("Location: painelfuncionario.php");
+						}
+						/* Se o usuario ou a senha não batem alertamos o usuario */
+						else{
+							echo "<script>alert('Usuário e/ou senha inválido(s), Tente novamente!');</script>";
+						}
+					}
+
+                }
+                /*Terceiro login*/
+                $userp = @$_REQUEST['nome3'];
+				$passp = @$_REQUEST['senha3'];
+                $submitp = @$_REQUEST['submit3'];
+                
+                $user5 = 'felipe';
+				$pass5 = '123';
+				
+				$user6 = 'gabriel';
+                $pass6 = '123';
+
+                if($submitp){
+
+                    if($userp == "" || $passp == ""){
+						echo "<script:alert('Por favor, preencha todos os campos!');</script>";
+                    }
+                    else{
+						if(($userp == $user1 && $passp == $pass1) || ($userp == $user2 && $passp == $pass2)){
+							session_start();
+							$_SESSION['usuario']=$userp;
+							$_SESSION['senha']=$passp;
+							header("Location: painelprofessor.php");
 						}
 						/* Se o usuario ou a senha não batem alertamos o usuario */
 						else{

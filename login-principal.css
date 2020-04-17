@@ -70,9 +70,13 @@
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39), inset 1px 1px 1px rgba(0, 0, 0, 0.39);
 }
 
+.professor button:active{
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39), inset 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
+
 .funcionario button{
     box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0.39);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     font-size: 25px;
     padding: 27px 28px;
     border: none;
@@ -82,22 +86,21 @@
     border-radius: 8px;
     outline: none;
     cursor: pointer;
+    margin: 25px 0px;
 }
 
-.meio{
-    margin: 35px 0px 50px 0px;
-}
-.meio p{
-    background-color: black;
-    width: 100%;
+.professor button{
+    box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0.39);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+    padding: 27px 38px;
+    border: none;
+    background: #008000;
     color: rgba(255, 255, 255, 0.973);
-    font-size: 45px;
-    border-radius: 50%;
     font-weight: bold;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
 }
 
 /*animação*/
@@ -214,4 +217,44 @@ form{
 .r-img{
     width: 20px;
     height: 20px;
+}
+
+/*Login Professor*/
+
+.h1p{
+    font-size: 20px;
+    color: #008000;
+}
+
+
+#nomep, #senhap{
+    width: 230px;
+    height: 75px;
+    font-size: 30PX;
+    border-radius: 8px;
+    outline: none;
+    padding: 3px;
+    border:solid #008000 3px;
+}
+
+.entrar-p{
+    margin-top: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color:#008000;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.39);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.entrar-p:active{
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39), inset 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
+
+.entrar-p:hover{
+    opacity: 0.7;
 }
