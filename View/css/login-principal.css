@@ -7,7 +7,7 @@
 }
 
 .p-estrutura{
-    background: linear-gradient(#1a18184f, #221e1a5e), url(./img/p-img.jpg);
+    background: linear-gradient(#1a18184f, #221e1a5e), url(../img/p-img.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;

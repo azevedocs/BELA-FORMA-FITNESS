@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/painelfuncionario.css">
-    <title>Document</title>
+    <title>PainelProfessor</title>
+    <link rel="stylesheet" href="./painelprofessor.html">
 </head>
 <body>
-    <h1>PAINEL FUNCIONARIO</h1>
+    <h1>PAINELPROFESSOR</h1>
 </body>
 </html>
