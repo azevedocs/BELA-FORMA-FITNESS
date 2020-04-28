@@ -37,9 +37,9 @@
 					}
                 }
                 /* Segundo login*/
-                $userf = @$_REQUEST['nome2'];
-				$passf = @$_REQUEST['senha2'];
-                $submitf = @$_REQUEST['submit2'];
+                $userf = @$_POST['nome2'];
+				$passf = @$_POST['senha2'];
+                $submitf = @$_POST['submit2'];
                 
                 $user3 = 'felipe';
 				$pass3 = '123';
@@ -67,9 +67,9 @@
 
                 }
                 /*Terceiro login*/
-                $userp = @$_REQUEST['nome3'];
-				$passp = @$_REQUEST['senha3'];
-                $submitp = @$_REQUEST['submit3'];
+                $userp = @$_POST['nome3'];
+				$passp = @$_POST['senha3'];
+                $submitp = @$_POST['submit3'];
                 
                 $user5 = 'felipe';
 				$pass5 = '123';
