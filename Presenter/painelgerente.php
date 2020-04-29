@@ -9,11 +9,11 @@
 <body>
 <div class='Modal'>
     <div class='Imodal'>
-        <div class='top'>DIGITE SEU RELATORIO <button class='fbotao'>X</button></div>
+        <div class='top'>DIGITE SEU RELATORIO<button class='fbotao'>X</button></div>
         <div class='cModal'>
             <form action="">
                 <textarea name="" id="" cols="43" rows="21"></textarea>
-                <input class='butaoE' type="submit" value="ENVIAR">
+                <input class='butaoE' type="submit" value="ENVIAR" id='Vaim'>
             </form>
         </div>
     </div>
@@ -21,36 +21,32 @@
 
     <div class="estrutura">
 <div class="segura-p">
-    <form action="">
+    <form action="" autocomplete="off">
         <H2 id='h01'>CADASTRAR PROFESSOR</H2>
-        <input type="number" name="idP" id="" maxlength="2" placeholder="Numero de inscrição do Professor">
-        <input type="text" name="nomeP" id="" placeholder="Nome do Professor">
+        <input type="text" name="nomeP" id="nomeP" placeholder="Nome do Professor">
         <input type="number" name="idadeP" id="" maxlength="2" placeholder="Idade do Professor">
-        <select name="sexoP" id=""><option value="Selecione">Selecione</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Feminino">Feminino</option>
-        <option value="Outros">Outros</option></select>
-        <input type="submit" value="INCLUIR" name='vaiP'>
+        <input type="date" name="dataP" id="tested" placeholder="Data de inscrição">
+        <input type="text" name="enderecoP" id="" placeholder="Endereço do Professor">
+        <input type="number" name="telefoneP" id="" placeholder="Telefone do Professor">
+        <input type="submit" value="INCLUIR" name='vaiP' id='botaoP'>
     </form>
 </div>
 
 <div class="segura-f">
     <button class='botao'>GERAR RELATORIO</button>
-    <form action="">
+    <form action="" autocomplete="off">
         <h2 id='h02'>CADASTRAR FUNCIONARIO</h2>
-        <input type="number" name="idF" id="" maxlength="2" placeholder="Numero de inscrição do funcionario">
         <input type="text" name="nomeF" id="" placeholder="Nome do funcionario">
         <input type="number" name="idadeF" id="" maxlength="2" placeholder="Idade do funcionario">
-        <select name="sexoF" id=""><option value="Selecione">Selecione</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Feminino">Feminino</option>
-        <option value="Outros">Outros</option></select>
-        <input type="submit" value="INCLUIR" name='vaiF'>
+        <input type="date" name="dataF" id="" placeholder="Data de inscrição do funcionario">
+        <input type="text" name="enderecoF" id="" placeholder="Endereço do funcionario">
+        <input type="number" name="telefoneF" id="" placeholder="Telefone do funcionario" >
+        <input type="submit" value="INCLUIR" name='vaiF' id="botaoF">
     </form>
 </div>
 
 <div class="segura-e">
-    <form action="" enctype="multipart/form-data">
+    <form action="" enctype="multipart/form-data" autocomplete="off">
         <h2 id='h03'>CADASTRAR EXERCICIO</h2>
         <input type="text" name="nomeE" id="nomeE" placeholder="nome do exercicio">
         <input type="text" name="acessorioE" id="acessorioE" placeholder="Acessorio">
@@ -61,7 +57,7 @@
         <option value="Dupla">Dupla</option>
         <option value="Grupo">Grupo</option></select>
         <input type="file" name="$img" id="" placeholder="ESCOLHA UMA IMAGEM">
-        <input type="submit" value="INCLUIR" name='vaiE'>
+        <input type="submit" value="INCLUIR" name='vaiE' id="botaoE">
     </form>
 </div>
 </div>
@@ -70,29 +66,30 @@
     <div class='segura-r'>
 <?php
 require('D:\XAMP\htdocs\BELA-FORMA-FITNESS\Model\Professor.class.php');
-$id = @$_REQUEST['idP'];
 $nome = @$_REQUEST['nomeP'];
 $idade = @$_REQUEST['idadeP'];
-$sexo = @$_REQUEST['sexoP'];
+$data = @$_REQUEST['dataP'];
+$endereco = @$_REQUEST['enderecoP'];
+$telefone = @$_REQUEST['telefoneP'];
 $submit = @$_REQUEST['vaiP'];
-
 
 if($submit){
 
-    if($id ==""){
+    if($data =="" || $nome ==""){
         echo "<script language=javascript>alert( 'Por favor, preencha todos os campos!!' );</script>";
         
     }
     
     else{
        
-        $novo = new Professor($id, $nome, $idade, $sexo);
+        $novo = new Professor($nome, $idade, $data, $endereco, $telefone);
         
-       echo "<br/>CADASTRO DE PROFESSOR CONFIRMADO<br/>";
-       echo '<br/>O ID do professor é: '. $novo->id .' foi cadastrado com sucesso';
-       echo '<br/>O nome do professor é: '.strtoupper($novo->nome);
-       echo '<br/>Sua idade é: '.$novo->idade .'.';
-       echo '<br/>Seu sexo é: '.strtoupper($novo->sexo); 
+        echo "<br/>CADASTRO DE PROFESSOR CONFIRMADO<br/>";
+        echo '<br/>O nome do professor é: '.strtoupper($novo->nome);
+        echo '<br/>Sua idade é: '.$novo->idade .' anos';
+        echo '<br/>Sua data de nascimento é: '.strtoupper($novo->data); 
+        echo '<br/>O endenreço cadastrado foi: '.strtoupper($novo->endereco); 
+        echo '<br/>O numero de telefone cadastrado foi: '.strtoupper($novo->telefone); 
 
        echo "<script language=javascript>alert( 'Inserção, feita com sucesso!!' );</script>";
     }
@@ -103,29 +100,31 @@ if($submit){
 /* Codigo cadastrar Funcionario**/
 
 require('D:\XAMP\htdocs\BELA-FORMA-FITNESS\Model\Funcionario.class.php');
-$idF = @$_REQUEST['idF'];
 $nomeF = @$_REQUEST['nomeF'];
 $idadeF = @$_REQUEST['idadeF'];
-$sexoF = @$_REQUEST['sexoF'];
+$dataF = @$_REQUEST['dataF'];
+$enderecoF = @$_REQUEST['enderecoF'];
+$telefoneF = @$_REQUEST['telefoneF'];
 $submitF = @$_REQUEST['vaiF'];
-
 
 if($submitF){
 
-    if( $idF ==""){
+    if( $dataF =="" || $nomeF ==""){
+
         echo "<script language=javascript>alert( 'Por favor, preencha todos os campos!!' );</script>";
         
     }
     
     else{
        
-        $novoF = new Funcionario($idF, $nomeF, $idadeF, $sexoF);
+        $novoF = new Funcionario($nomeF, $idadeF, $dataF, $enderecoF, $telefoneF);
         
        echo "<br/>CADASTRO DE FUNCIONARIO CONFIRMADO<br/>";
-       echo '<br/>O ID do funcionario é: '. $novoF->id . ' foi cadastrado com sucesso';
        echo '<br/>O nome do funcionario é: '.strtoupper($novoF->nome);
-       echo '<br/>Sua idade é: '.$novoF->idade .' anos';
-       echo '<br/>Seu sexo é: '.strtoupper($novoF->sexo); 
+       echo '<br/>Idade do funcionario cadastrado: '.$novoF->idade .' anos';
+       echo '<br/>Sua data de nascimento é: '. $novoF->data; 
+       echo '<br/>O endenreço do funcionario cadastrado é: '.strtoupper($novoF->endereco); 
+       echo '<br/>O numero de telefone cadastrado foi: '.strtoupper($novoF->telefone); 
 
        echo "<script language=javascript>alert( 'Inserção, feita com sucesso!!' );</script>";
     }
@@ -161,7 +160,7 @@ if($submitE){
        echo '<br/>A região muscular que ele ira trabalhar é: '.strtoupper($novoE->regiaomuscular);
        echo '<br/>O objetivo do exercicio é: '.strtoupper($novoE->objetivo); 
        echo '<br/>A quantidade de pessoas do exercicio é: '.$novoE->quantidadePessoas;
-       echo '<br/>Imagem do exercicio '.$novoE->img;  
+       echo '<br/>Upload de Imagem feito com sucesso ';  
 
        echo "<script language=javascript>alert( 'Inserção, feita com sucesso!!' );</script>";
     }

@@ -1,6 +1,6 @@
 *{
     margin: 0;
-   
+   font-family: Arial, Helvetica, sans-serif;
 }
 
 #h01{
@@ -118,4 +118,8 @@ form{
 
 .ativo{
     display: flex;
+}
+
+#botaoP, #botaoE, #botaoF{
+    cursor: pointer;
 }

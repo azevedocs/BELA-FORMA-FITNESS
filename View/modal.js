@@ -18,3 +18,9 @@ function ver(e){
 }
 
 Modal.addEventListener('click',ver)
+
+EnviarR = document.querySelector("#Vaim")
+console.log(EnviarR)
+EnviarR.onclick = function(){
+    alert('RELATORIO ENVIADO COM SUCESSO!!!!')
+}
