@@ -1,12 +1,13 @@
-<? php
- Class Aluno {
+<?php
+Class Aluno{
     
-    function  __construct ( $ cpf , $ nome , $ datanascimento , $ endereco , $ telefone ) {
-        $ this -> cpf = $ cpf ;
-        $ this -> nome = $ nome ;
-        $ this -> datanascimento = $ datanascimento ;
-        $ this -> endereco = $ endereco ;
-        $ this -> telefone = $ telefone ;
+    function __construct($nome, $cpf, $data, $endereco, $telefone, $alocar){
+        $this->nome = $nome;
+        $this->cpf = $cpf;
+        $this->data = $data;
+        $this->endereco = $endereco;
+        $this->telefone = $telefone;
+        $this->turma = $alocar;
     }
 
 }

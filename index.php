@@ -39,7 +39,7 @@
             </div>
             <!--Dados do login do funcionario pegar com php para fazer a verificação-->
                 <div class="login-funcionario pegar">
-                        <a href="index.html"><img class="r-img" src="./View/img/returnn.png" alt=""></a>
+                        <a href="index.php"><img class="r-img" src="./View/img/returnn.png" alt=""></a>
                     <form action="./Presenter/validar.php" method="post">
                         <h1 class="h1f">FUNCIONARIO</h1>
                         <label for="nomef">Login</label>
@@ -51,7 +51,7 @@
                 </div>
             <!-----Dados do login de professor pegar com php para fazer a verificação-->
                 <div class="login-professor pegar">
-                        <a href="index.html"><img class="r-img" src="./View/img/returnn.png" alt=""></a>
+                        <a href="index.php"><img class="r-img" src="./View/img/returnn.png" alt=""></a>
                     <form action="./Presenter/validar.php" method="post">
                         <h1 class="h1p">PROFESSOR</h1>
                         <label for="nomep">Login</label>

@@ -24,7 +24,7 @@
     <form action="" autocomplete="off">
         <H2 id='h01'>CADASTRAR PROFESSOR</H2>
         <input type="text" name="nomeP" id="nomeP" placeholder="Nome do Professor">
-        <input type="number" name="idadeP" id="" maxlength="2" placeholder="Idade do Professor">
+        <input type="number" name="cpfP" id=""  placeholder="CPF do Professor">
         <input type="date" name="dataP" id="tested" placeholder="Data de inscrição">
         <input type="text" name="enderecoP" id="" placeholder="Endereço do Professor">
         <input type="number" name="telefoneP" id="" placeholder="Telefone do Professor">
@@ -37,7 +37,7 @@
     <form action="" autocomplete="off">
         <h2 id='h02'>CADASTRAR FUNCIONARIO</h2>
         <input type="text" name="nomeF" id="" placeholder="Nome do funcionario">
-        <input type="number" name="idadeF" id="" maxlength="2" placeholder="Idade do funcionario">
+        <input type="number" name="cpfF" id=""  placeholder="CPF do funcionario">
         <input type="date" name="dataF" id="" placeholder="Data de inscrição do funcionario">
         <input type="text" name="enderecoF" id="" placeholder="Endereço do funcionario">
         <input type="number" name="telefoneF" id="" placeholder="Telefone do funcionario" >
@@ -67,7 +67,7 @@
 <?php
 require('D:\XAMP\htdocs\BELA-FORMA-FITNESS\Model\Professor.class.php');
 $nome = @$_REQUEST['nomeP'];
-$idade = @$_REQUEST['idadeP'];
+$cpf = @$_REQUEST['cpfP'];
 $data = @$_REQUEST['dataP'];
 $endereco = @$_REQUEST['enderecoP'];
 $telefone = @$_REQUEST['telefoneP'];
@@ -82,11 +82,11 @@ if($submit){
     
     else{
        
-        $novo = new Professor($nome, $idade, $data, $endereco, $telefone);
+        $novo = new Professor($nome, $cpf, $data, $endereco, $telefone);
         
         echo "<br/>CADASTRO DE PROFESSOR CONFIRMADO<br/>";
         echo '<br/>O nome do professor é: '.strtoupper($novo->nome);
-        echo '<br/>Sua idade é: '.$novo->idade .' anos';
+        echo '<br/>Seu CPF é: '.$novo->cpf;
         echo '<br/>Sua data de nascimento é: '.strtoupper($novo->data); 
         echo '<br/>O endenreço cadastrado foi: '.strtoupper($novo->endereco); 
         echo '<br/>O numero de telefone cadastrado foi: '.strtoupper($novo->telefone); 
@@ -102,7 +102,7 @@ if($submit){
 require('D:\XAMP\htdocs\BELA-FORMA-FITNESS\Model\Funcionario.class.php');
 $nomeF = @$_REQUEST['nomeF'];
 $idadeF = @$_REQUEST['idadeF'];
-$dataF = @$_REQUEST['dataF'];
+$cpfF = @$_REQUEST['cpfF'];
 $enderecoF = @$_REQUEST['enderecoF'];
 $telefoneF = @$_REQUEST['telefoneF'];
 $submitF = @$_REQUEST['vaiF'];
@@ -117,11 +117,11 @@ if($submitF){
     
     else{
        
-        $novoF = new Funcionario($nomeF, $idadeF, $dataF, $enderecoF, $telefoneF);
+        $novoF = new Funcionario($nomeF, $cpfF, $dataF, $enderecoF, $telefoneF);
         
        echo "<br/>CADASTRO DE FUNCIONARIO CONFIRMADO<br/>";
        echo '<br/>O nome do funcionario é: '.strtoupper($novoF->nome);
-       echo '<br/>Idade do funcionario cadastrado: '.$novoF->idade .' anos';
+       echo '<br/>O CPF do funcionario cadastrado: '.$novoF->cpf;
        echo '<br/>Sua data de nascimento é: '. $novoF->data; 
        echo '<br/>O endenreço do funcionario cadastrado é: '.strtoupper($novoF->endereco); 
        echo '<br/>O numero de telefone cadastrado foi: '.strtoupper($novoF->telefone); 
