@@ -11,7 +11,7 @@
     <div class='matricula'>
         <button class='bp'>ACESSAR DADOS DO ALUNO</button>
         <div class='f-trancar'>
-        <input type="text" name="" id="" placeholder='CPF DO ALUNO'>
+        <input type="number" name="" id="" placeholder='CPF DO ALUNO'>
         <button class='funcao'>TRANCAR</button>
         </div>
     </div>
@@ -36,6 +36,15 @@
         <input type="number" name="" id="" placeholder='turma'> 
         <input type="number" name="" id="" placeholder='valor'>
         <button class='funcao'>RECEBER</button>
+        </div>
+    </div>
+
+    <div class='mensalidade'>
+    <button class='bp'>ALOCAR ALUNO</button>
+        <div class='f-trancar'>
+        <input type="number" name="" id="" placeholder='CPF DO ALUNO'>
+        <input type="text" name="" id="" placeholder='Turma que deseja'>
+        <button class='funcao'>SOLICITAR ALOCAMENTO</button>
         </div>
     </div>
     </section>
